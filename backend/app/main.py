@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app.core.config import settings
-from app.database.connection import test_connection
+from app.routers.health import router as health_router
 
 
 app = FastAPI(
@@ -9,20 +9,11 @@ app = FastAPI(
     version=settings.app_version
 )
 
+app.include_router(health_router)
+
 
 @app.get("/")
 def root():
     return {
-        "message": f"{settings.app_name} is running",
-        "environment": settings.environment
-    }
-
-
-@app.get("/db-test")
-def db_test():
-    result = test_connection()
-
-    return {
-        "database": "connected",
-        "result": result
+        "message": f"{settings.app_name} is running"
     }

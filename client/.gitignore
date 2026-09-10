@@ -1,3 +1,19 @@
+# Python
+backend/.venv/
+backend/.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Alembic / local DB artifacts
+*.db
+
 # Logs
 logs
 *.log
@@ -7,6 +23,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node
 node_modules
 dist
 dist-ssr
