@@ -6,8 +6,8 @@ from sqlalchemy import pool
 from alembic import context
 
 from app.core.config import settings
-from app.database.base import Base
-from app.models.category import Category
+from app.database.connection import Base
+from app.models.categories import Category
 
 
 # Alembic Config object

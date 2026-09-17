@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 from app.core.config import settings
-from app.routers.health import router as health_router
+from app.routers.categories import router as category_router
 
 
 app = FastAPI(
@@ -9,11 +9,11 @@ app = FastAPI(
     version=settings.app_version
 )
 
-app.include_router(health_router)
+app.include_router(category_router)
 
 
 @app.get("/")
 def root():
     return {
-        "message": f"{settings.app_name} is running"
+        "message": "DineFlow API is running"
     }

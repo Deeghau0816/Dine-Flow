@@ -2,7 +2,8 @@ from pydantic import BaseModel, ConfigDict
 
 
 class CategoryBase(BaseModel):
-    name: str
+    categoryName: str
+    categoryImage: str | None = None
 
 
 class CategoryCreate(CategoryBase):
@@ -10,7 +11,8 @@ class CategoryCreate(CategoryBase):
 
 
 class CategoryUpdate(BaseModel):
-    name: str
+    categoryName: str | None = None
+    categoryImage: str | None = None
 
 
 class CategoryResponse(CategoryBase):
